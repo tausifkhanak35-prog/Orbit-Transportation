@@ -15,13 +15,13 @@
     --crimson:#8C1D32;
     --gold:#C9982E;
     --gold-light:#E7C876;
-    --bg:#110A0B;
-    --ivory:#170E10;
-    --surface:#1E1416;
+    --bg:#0E1E30;
+    --ivory:#142A42;
+    --surface:#1C3552;
     --white:#FFFFFF;
-    --ink:#F3ECE3;
-    --ink-soft:rgba(243,236,227,0.62);
-    --line: rgba(243,236,227,0.12);
+    --ink:#F3EEE2;
+    --ink-soft:rgba(243,238,226,0.72);
+    --line: rgba(243,238,226,0.16);
     --shadow: 0 26px 60px -20px rgba(0,0,0,0.6);
     --ease: cubic-bezier(.16,.84,.44,1);
   }
@@ -51,19 +51,19 @@
     border:1.5px solid transparent; cursor:pointer;
     transition: transform .35s var(--ease), box-shadow .35s var(--ease), background .3s, color .3s, border-color .3s;
   }
-  .btn-primary{ background:var(--maroon); color:var(--white); }
-  .btn-primary:hover{ background:var(--maroon-deep); transform:translateY(-2px); box-shadow:var(--shadow); }
+  .btn-primary{ background:var(--gold); color:var(--bg); }
+  .btn-primary:hover{ background:var(--gold-light); color:var(--bg); transform:translateY(-2px); box-shadow:var(--shadow); }
   .btn-outline{ border-color: rgba(255,255,255,0.5); color:var(--white); }
   .btn-outline:hover{ background:rgba(255,255,255,0.12); transform:translateY(-2px); }
   .btn-outline.dark{ border-color: var(--gold); color:var(--gold-light); }
-  .btn-outline.dark:hover{ background:var(--gold); color:var(--maroon-deep); }
+  .btn-outline.dark:hover{ background:var(--gold); color:var(--bg); }
 
   /* ---------- NAV ---------- */
   header{
     position:fixed; top:0; left:0; right:0; z-index:100;
     padding:22px 0; transition: padding .35s var(--ease), background .35s var(--ease), box-shadow .35s var(--ease);
   }
-  header.scrolled{ padding:14px 0; background:rgba(17,10,11,0.88); backdrop-filter:blur(10px); box-shadow:0 6px 24px -12px rgba(0,0,0,0.5); }
+  header.scrolled{ padding:14px 0; background:rgba(14,30,48,0.88); backdrop-filter:blur(10px); box-shadow:0 6px 24px -12px rgba(0,0,0,0.5); }
   nav{ display:flex; align-items:center; justify-content:space-between; }
   .brand{ display:flex; align-items:center; gap:12px; }
   .brand img{ height:42px; width:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.15)); transition:height .35s var(--ease); }
@@ -96,17 +96,31 @@
   .mobile-overlay{
     position:fixed; inset:0; background:var(--ivory); z-index:150;
     display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
-    transform:translateY(-24px); opacity:0; visibility:hidden; pointer-events:none;
-    transition: transform .4s var(--ease), opacity .35s var(--ease), visibility 0s linear .4s;
+    clip-path: circle(0% at calc(100% - 46px) 46px);
+    transition: clip-path .65s var(--ease);
+    pointer-events:none;
   }
-  .mobile-overlay.open{ transform:translateY(0); opacity:1; visibility:visible; pointer-events:auto; transition: transform .4s var(--ease), opacity .35s var(--ease); }
-  .mobile-overlay a{ font-family:'Bodoni Moda',serif; font-size:26px; color:var(--ink); padding:14px 0; transition:color .25s; }
+  .mobile-overlay.open{ clip-path: circle(150% at calc(100% - 46px) 46px); pointer-events:auto; }
+  .mobile-overlay a{
+    font-family:'Bodoni Moda',serif; font-size:26px; color:var(--ink); padding:14px 0;
+    opacity:0; transform:translateY(18px);
+    transition: color .25s, opacity .45s ease, transform .45s ease;
+  }
+  .mobile-overlay.open a{ opacity:1; transform:translateY(0); }
+  .mobile-overlay > a:nth-child(1){ transition-delay:.18s; }
+  .mobile-overlay > a:nth-child(2){ transition-delay:.23s; }
+  .mobile-overlay > a:nth-child(3){ transition-delay:.28s; }
+  .mobile-overlay > a:nth-child(4){ transition-delay:.33s; }
+  .mobile-overlay > a:nth-child(5){ transition-delay:.38s; }
+  .mobile-overlay > a:nth-child(6){ transition-delay:.43s; }
+  .mobile-overlay > a:nth-child(7){ transition-delay:.48s; }
+  .mobile-overlay > a:nth-child(8){ transition-delay:.53s; }
   .mobile-overlay a:hover{ color:var(--gold-light); }
   .mobile-overlay .btn{ margin-top:20px; }
 
   /* ---------- HERO (photographic, professional) ---------- */
   .hero{
-    position:relative; min-height:100vh; display:flex; align-items:center;
+    position:relative; min-height:100vh; min-height:100svh; display:flex; align-items:center;
     background:
       linear-gradient(100deg, rgba(5,4,5,0.78) 0%, rgba(5,4,5,0.42) 38%, rgba(5,4,5,0.02) 62%),
       linear-gradient(0deg, rgba(5,4,5,0.6) 0%, rgba(5,4,5,0.05) 30%),
@@ -190,29 +204,30 @@
   .services-grid .service-card:nth-child(6){ transition-delay:.25s; }
   .service-card::before{
     content:''; position:absolute; inset:0; z-index:0;
-    background: linear-gradient(160deg, var(--maroon) 0%, var(--maroon-deep) 100%);
-    transform: translateY(101%); transition: transform .5s var(--ease);
+    background: linear-gradient(160deg, var(--surface) 0%, #081420 100%);
+    clip-path: circle(0% at 22% 20%); transition: clip-path .65s var(--ease);
   }
   .service-card::after{
     content:''; position:absolute; top:0; left:0; right:0; height:3px;
     background:linear-gradient(90deg, var(--gold), var(--gold-light)); transform:scaleX(0); transform-origin:left; transition: transform .5s var(--ease);
   }
-  .service-card:hover{ transform:translateY(-10px); box-shadow:0 24px 46px -18px rgba(78,15,28,0.4); border-color:transparent; }
-  .service-card:hover::before{ transform:translateY(0); }
+  .service-card:hover{ transform:translateY(-10px) rotate(-0.6deg); box-shadow:0 24px 46px -18px rgba(0,0,0,0.45); border-color:transparent; }
+  .service-card:hover::before{ clip-path: circle(140% at 22% 20%); }
   .service-card:hover::after{ transform:scaleX(1); }
   .service-card .sicon{
     position:relative; z-index:1; margin-bottom:22px; width:56px; height:56px; border-radius:50%;
     display:flex; align-items:center; justify-content:center; color:var(--gold);
     background:radial-gradient(circle at 30% 30%, rgba(201,152,46,0.16), rgba(201,152,46,0.04));
     border:1px solid rgba(201,152,46,0.35);
-    transition: transform .5s var(--ease), border-color .45s, background .45s, color .45s;
+    transition: transform .6s cubic-bezier(.34,1.56,.64,1), border-color .45s, background .45s, color .45s;
   }
   .service-card .sicon svg{ width:26px; height:26px; }
-  .service-card:hover .sicon{ transform:rotate(-6deg) scale(1.1); border-color:rgba(231,200,118,0.7); background:rgba(255,255,255,0.12); color:var(--gold-light); }
+  .service-card:hover .sicon{ transform:rotate(-10deg) scale(1.2); border-color:rgba(231,200,118,0.7); background:rgba(255,255,255,0.12); color:var(--gold-light); }
   .service-card h3{ position:relative; z-index:1; font-size:19px; margin-bottom:12px; color:var(--ink); transition:color .45s, transform .5s var(--ease); }
   .service-card p{ position:relative; z-index:1; font-size:14px; color:var(--ink-soft); transition:color .45s; }
   .service-card:hover h3, .service-card:hover p{ color:var(--white); }
-  .service-card:hover h3{ transform:translateX(2px); }
+  .service-card:hover h3{ transform:translateX(3px); }
+
 
   /* FLEET */
   .fleet-strip{ display:flex; gap:20px; overflow-x:auto; padding-bottom:12px; scroll-snap-type:x mandatory; }
@@ -225,7 +240,7 @@
   .fleet-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); border-color:var(--gold); }
   .fleet-img{
     position:relative; aspect-ratio:4/3; overflow:hidden;
-    background: linear-gradient(160deg, var(--maroon) 0%, var(--maroon-deep) 100%);
+    background: linear-gradient(160deg, var(--surface) 0%, #081420 100%);
   }
   .fleet-img img{ width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
   .fleet-card:hover .fleet-img img{ transform:scale(1.08); }
@@ -247,13 +262,13 @@
   .why-item h4{ font-size:15.5px; margin-bottom:4px; }
   .why-item p{ font-size:13.5px; color:var(--ink-soft); }
   .why-panel{
-    background: linear-gradient(160deg, var(--maroon) 0%, var(--maroon-deep) 100%);
-    border-radius:8px; padding:48px 40px; color:var(--white); display:flex; flex-direction:column; justify-content:center;
-    position:relative; overflow:hidden; border:1px solid rgba(231,200,118,0.25); box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
+    background: linear-gradient(155deg, var(--gold-light) 0%, var(--gold) 55%, #A97C22 100%);
+    border-radius:8px; padding:48px 40px; color:var(--bg); display:flex; flex-direction:column; justify-content:center;
+    position:relative; overflow:hidden; border:1px solid rgba(14,30,48,0.15); box-shadow:0 30px 60px -20px rgba(0,0,0,0.5);
   }
-  .why-panel h3{ color:var(--white); font-size:26px; margin-bottom:16px; }
-  .why-panel p{ color:rgba(255,255,255,0.75); font-size:14.5px; margin-bottom:28px; }
-  .why-panel .tag-line{ color:var(--gold-light); font-family:'Bodoni Moda',serif; font-style:italic; font-size:18px; }
+  .why-panel h3{ color:var(--bg); font-size:26px; margin-bottom:16px; }
+  .why-panel p{ color:rgba(14,30,48,0.78); font-size:14.5px; margin-bottom:28px; }
+  .why-panel .tag-line{ color:var(--bg); font-family:'Bodoni Moda',serif; font-style:italic; font-size:18px; }
 
   /* CONTACT */
   .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; }
@@ -274,7 +289,7 @@
   .contact-form label{ font-size:12px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:-8px; }
 
   /* FOOTER */
-  footer{ background:var(--maroon-deep); color:rgba(255,255,255,0.65); padding:60px 0 28px; }
+  footer{ background:#081420; border-top:1px solid rgba(201,152,46,0.25); color:rgba(255,255,255,0.65); padding:60px 0 28px; }
   .footer-top{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,0.12); margin-bottom:28px; }
   .footer-brand{ display:flex; align-items:center; gap:12px; }
   .footer-brand img{ height:36px; }
@@ -288,7 +303,7 @@
     .nav-links, .nav-cta .btn-outline{ display:none; }
     .menu-toggle{ display:flex; }
     .why-wrap, .contact-grid{ grid-template-columns:1fr; }
-    .hero{ padding-top:130px; padding-bottom:90px; }
+    .hero{ padding-top:130px; padding-bottom:90px; background-position: 30% center; }
     .services-grid{ grid-template-columns:1fr 1fr; gap:18px; }
     .values-list{ grid-template-columns:1fr 1fr; }
     .about-stats{ grid-template-columns:1fr 1fr; }
@@ -313,14 +328,14 @@
     .footer-top{ flex-direction:column; align-items:flex-start; }
   }
   @media (hover: none){
-    .service-card::before{ transform:translateY(0); opacity:0; transition:opacity .4s; }
+    .service-card::before{ clip-path:circle(140% at 22% 20%); opacity:0; transition:opacity .4s; }
     .service-card:active::before{ opacity:1; }
     .fleet-card:active{ transform:translateY(-4px); }
   }
 
   /* GALLERY / CAROUSEL */
   .gallery-wrap{ position:relative; }
-  .gallery-viewport{ position:relative; overflow:hidden; border-radius:6px; aspect-ratio:16/7; background:var(--maroon-deep); }
+  .gallery-viewport{ position:relative; overflow:hidden; border-radius:6px; aspect-ratio:16/7; background:#081420; }
   .gallery-track{ display:flex; height:100%; transition:transform .7s var(--ease); }
   .gallery-slide{ position:relative; flex:0 0 100%; height:100%; }
   .gallery-slide img{ width:100%; height:100%; object-fit:cover; display:block; }
@@ -328,7 +343,7 @@
     position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px;
     background:
       radial-gradient(circle at 50% 40%, rgba(201,152,46,0.14), transparent 60%),
-      linear-gradient(160deg, var(--maroon) 0%, var(--maroon-deep) 100%);
+      linear-gradient(160deg, var(--surface) 0%, #081420 100%);
     color:rgba(255,255,255,0.85);
   }
   .gallery-slide .slide-fallback > svg{
@@ -344,7 +359,7 @@
   }
   .gallery-caption .tag{
     font-size:11px; letter-spacing:0.1em; text-transform:uppercase; font-weight:700;
-    color:var(--maroon-deep); background:var(--gold-light); padding:5px 12px; border-radius:2px;
+    color:var(--bg); background:var(--gold-light); padding:5px 12px; border-radius:2px;
   }
   .gallery-caption span.gcap-text{ color:var(--white); font-family:'Bodoni Moda',serif; font-size:18px; }
   .gallery-arrow{
@@ -366,7 +381,7 @@
   .team-card{ text-align:center; }
   .team-photo{
     position:relative; aspect-ratio:1/1; border-radius:50%; overflow:hidden; margin:0 auto 22px; width:170px;
-    background: linear-gradient(160deg, var(--maroon) 0%, var(--maroon-deep) 100%);
+    background: linear-gradient(160deg, var(--surface) 0%, #081420 100%);
     border:3px solid var(--gold-light); box-shadow:var(--shadow);
   }
   .team-photo img{ width:100%; height:100%; object-fit:cover; }
@@ -584,12 +599,12 @@
               <div class="gallery-caption"><span class="tag">Hospitality</span><span class="gcap-text">Catering &amp; guest services</span></div>
             </div>
             <div class="gallery-slide">
-              <img src="gallery-bus-interior.png" alt="Orbit executive vehicles" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+              <img src="gallery-vip-fleet.png" alt="Orbit executive vehicles" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
               <div class="slide-fallback"><svg width="52" height="36" viewBox="0 0 52 36" fill="none"><path d="M4 26 C4 18 12 16 18 16 L23 8 L40 8 L45 16 C49 16 48 20 48 26 L48 27 L4 27 Z" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="28" r="4" stroke="currentColor" stroke-width="2"/><circle cx="40" cy="28" r="4" stroke="currentColor" stroke-width="2"/></svg><span>Executive Fleet</span></div>
               <div class="gallery-caption"><span class="tag">Fleet</span><span class="gcap-text">Executive &amp; VIP transfers</span></div>
             </div>
             <div class="gallery-slide">
-              <img src="gallery-vip-fleet.png" alt="Orbit hospitality event" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
+              <img src="gallery-bus-interior.png" alt="Orbit hospitality event" onload="this.classList.add('loaded')" onerror="this.style.display='none'">
               <div class="slide-fallback"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 3v18M4 8h4a2 2 0 0 1 0 4H4M15 3v18M12 3h6l-1 8h-4z"/></svg><span>Hospitality</span></div>
               <div class="gallery-caption"><span class="tag">Hospitality</span><span class="gcap-text">Event &amp; on-site support</span></div>
             </div>
