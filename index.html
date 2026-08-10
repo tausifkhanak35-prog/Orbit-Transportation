@@ -2,3924 +2,1000 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0,
-      maximum-scale=1.0, user-scalable=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#111111">
-
-<meta name="description"
-      content="Orbit Transport & Hospitality Services - Qatar's dependable partner for staff transportation, executive transfers, heavy equipment and hospitality services.">
-
-<title>Orbit Transport & Hospitality Services | Qatar</title>
+<meta name="description" content="Orbit for Transport and Hospitality Services - professional transportation, fleet leasing, hospitality and support services in Doha, Qatar.">
+<title>Orbit | Transport & Hospitality Services</title>
 
 <style>
-
-/* =========================================================
-   ROOT
-========================================================= */
-
-:root {
-    --black: #111111;
-    --black-2: #171717;
-    --black-3: #202020;
-
-    --gold: #cba458;
-    --gold-light: #e0bd72;
-
-    --cream: #f7f4ed;
-    --white: #ffffff;
-    --muted: #bdbdbd;
-    --dark-muted: #555555;
-
-    --container: 1180px;
-
-    --radius: 22px;
-
-    --shadow:
-        0 20px 60px rgba(0,0,0,0.15);
-
-    --transition:
-        0.35s cubic-bezier(.2,.8,.2,1);
-}
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    background: var(--cream);
-    color: var(--black);
-
-    overflow-x: hidden;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-button,
-input,
-textarea,
-select {
-    font: inherit;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.container {
-    width: min(
-        calc(100% - 40px),
-        var(--container)
-    );
-
-    margin: 0 auto;
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.header {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    height: 78px;
-
-    z-index: 9999;
-
-    background:
-        rgba(17,17,17,0.94);
-
-    backdrop-filter:
-        blur(15px);
-
-    -webkit-backdrop-filter:
-        blur(15px);
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.06);
-
-    transition:
-        var(--transition);
-}
-
-.header.scrolled {
-    height: 68px;
-
-    background:
-        rgba(10,10,10,0.98);
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.2);
-}
-
-.nav {
-    height: 100%;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-}
-
-
-/* =========================================================
-   LOGO - FIXED SIZE
-========================================================= */
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 10001;
-}
-
-.logo img {
-    width: 105px;
-    height: auto;
-    max-height: 48px;
-    object-fit: contain;
-    display: block;
-}
-
-
-/* MOBILE LOGO */
-
-@media (max-width: 700px) {
-
-    .logo img {
-        width: 88px;
-        max-height: 42px;
-    }
-
-}
-
-/* =========================================================
-   DESKTOP NAV
-========================================================= */
-
-.nav-links {
-    display: flex;
-
-    align-items: center;
-
-    gap: 38px;
-
-    list-style: none;
-}
-
-.nav-links a {
-    position: relative;
-
-    color: white;
-
-    font-size: 15px;
-
-    font-weight: 600;
-
-    padding: 8px 0;
-
-    transition:
-        var(--transition);
-}
-
-.nav-links a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    width: 0;
-    height: 2px;
-
-    background:
-        var(--gold);
-
-    transition:
-        var(--transition);
-}
-
-.nav-links a:hover {
-    color:
-        var(--gold-light);
-}
-
-.nav-links a:hover::after {
-    width: 100%;
-}
-
-
-/* =========================================================
-   MENU BUTTON
-========================================================= */
-
-.menu-button {
-    display: none;
-
-    width: 48px;
-    height: 48px;
-
-    border: 1px solid
-        rgba(255,255,255,0.15);
-
-    border-radius: 50%;
-
-    background:
-        rgba(255,255,255,0.05);
-
-    cursor: pointer;
-
-    position: relative;
-
-    z-index: 10001;
-
-    transition:
-        var(--transition);
-}
-
-.menu-button:hover {
-    background:
-        var(--gold);
-
-    border-color:
-        var(--gold);
-
-    transform:
-        rotate(5deg);
-}
-
-.menu-line {
-    position: absolute;
-
-    width: 20px;
-    height: 2px;
-
-    left: 50%;
-
-    background: white;
-
-    border-radius: 5px;
-
-    transform:
-        translateX(-50%);
-
-    transition:
-        0.35s ease;
-}
-
-.menu-line:nth-child(1) {
-    top: 16px;
-}
-
-.menu-line:nth-child(2) {
-    top: 23px;
-}
-
-.menu-line:nth-child(3) {
-    top: 30px;
-}
-
-.menu-button.active .menu-line:nth-child(1) {
-    top: 23px;
-
-    transform:
-        translateX(-50%)
-        rotate(45deg);
-}
-
-.menu-button.active .menu-line:nth-child(2) {
-    opacity: 0;
-
-    transform:
-        translateX(-50%)
-        scale(0);
-}
-
-.menu-button.active .menu-line:nth-child(3) {
-    top: 23px;
-
-    transform:
-        translateX(-50%)
-        rotate(-45deg);
-}
-
-
-/* =========================================================
-   MOBILE NAV
-========================================================= */
-
-.mobile-menu {
-    position: fixed;
-
-    top: 0;
-    right: 0;
-
-    width: min(88vw, 380px);
-
-    height: 100vh;
-
-    background:
-        rgba(15,15,15,0.98);
-
-    backdrop-filter:
-        blur(20px);
-
-    -webkit-backdrop-filter:
-        blur(20px);
-
-    z-index: 10000;
-
-    padding:
-        120px 35px 40px;
-
-    transform:
-        translateX(100%);
-
-    transition:
-        0.45s cubic-bezier(.2,.8,.2,1);
-
-    box-shadow:
-        -20px 0 60px
-        rgba(0,0,0,0.3);
-}
-
-.mobile-menu.open {
-    transform:
-        translateX(0);
-}
-
-.mobile-menu ul {
-    list-style: none;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 8px;
-}
-
-.mobile-menu li {
-    opacity: 0;
-
-    transform:
-        translateX(30px);
-
-    transition:
-        0.35s ease;
-}
-
-.mobile-menu.open li {
-    opacity: 1;
-
-    transform:
-        translateX(0);
-}
-
-.mobile-menu.open li:nth-child(1) {
-    transition-delay: .08s;
-}
-
-.mobile-menu.open li:nth-child(2) {
-    transition-delay: .13s;
-}
-
-.mobile-menu.open li:nth-child(3) {
-    transition-delay: .18s;
-}
-
-.mobile-menu.open li:nth-child(4) {
-    transition-delay: .23s;
-}
-
-.mobile-menu.open li:nth-child(5) {
-    transition-delay: .28s;
-}
-
-.mobile-menu a {
-    display: block;
-
-    padding: 18px 0;
-
-    color: white;
-
-    font-size: 24px;
-
-    font-weight: 600;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.08);
-
-    transition:
-        var(--transition);
-}
-
-.mobile-menu a:hover {
-    color: var(--gold);
-
-    padding-left: 10px;
-}
-
-.menu-overlay {
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        rgba(0,0,0,0.55);
-
-    z-index: 9998;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition:
-        var(--transition);
-}
-
-.menu-overlay.active {
-    opacity: 1;
-
-    visibility: visible;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero {
-    position: relative;
-
-    min-height:
-        820px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    overflow: hidden;
-
-    background:
-        #111;
-}
-
-
-/* SHARP DOHA IMAGE */
-
-.hero::before {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-        url("home.png");
-
-    background-size:
-        cover;
-
-    background-position:
-        center center;
-
-    background-repeat:
-        no-repeat;
-
-    transform:
-        scale(1.01);
-
-    z-index: 0;
-}
-
-
-/* DARK OVERLAY - NOT BLUR */
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,0.58) 0%,
-            rgba(0,0,0,0.42) 45%,
-            rgba(0,0,0,0.72) 100%
-        );
-
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-
-    z-index: 2;
-
-    width:
-        min(900px, 90%);
-
-    text-align:
-        center;
-
-    color: white;
-
-    padding-top:
-        80px;
-
-    animation:
-        heroIn 1s ease both;
-}
-
-@keyframes heroIn {
-    from {
-        opacity: 0;
-        transform:
-            translateY(35px);
-    }
-
-    to {
-        opacity: 1;
-        transform:
-            translateY(0);
-    }
-}
-
-.hero h1 {
-    font-size:
-        clamp(42px, 6vw, 78px);
-
-    line-height:
-        0.98;
-
-    letter-spacing:
-        -3px;
-
-    font-weight:
-        800;
-
-    margin-bottom:
-        28px;
-}
-
-.hero h1 span {
-    color:
-        var(--gold-light);
-}
-
-.hero p {
-    max-width:
-        720px;
-
-    margin:
-        0 auto 35px;
-
-    font-size:
-        clamp(15px, 1.5vw, 19px);
-
-    line-height:
-        1.65;
-
-    color:
-        rgba(255,255,255,0.92);
-}
-
-.hero-buttons {
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        15px;
-
-    flex-wrap:
-        wrap;
-}
-
-.btn {
-    display:
-        inline-flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    min-height:
-        54px;
-
-    padding:
-        0 30px;
-
-    border-radius:
-        50px;
-
-    font-size:
-        15px;
-
-    font-weight:
-        700;
-
-    cursor:
-        pointer;
-
-    transition:
-        var(--transition);
-}
-
-.btn-gold {
-    background:
-        var(--gold);
-
-    color:
-        #111;
-}
-
-.btn-gold:hover {
-    background:
-        var(--gold-light);
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        0 12px 30px
-        rgba(203,164,88,0.3);
-}
-
-.btn-outline {
-    border:
-        1px solid
-        var(--gold);
-
-    color:
-        white;
-
-    background:
-        rgba(0,0,0,0.2);
-}
-
-.btn-outline:hover {
-    background:
-        var(--gold);
-
-    color:
-        #111;
-
-    transform:
-        translateY(-4px);
-}
-
-
-/* =========================================================
-   MARQUEE
-========================================================= */
-
-.marquee {
-    position:
-        absolute;
-
-    z-index:
-        3;
-
-    bottom:
-        0;
-
-    left:
-        0;
-
-    width:
-        100%;
-
-    overflow:
-        hidden;
-
-    background:
-        rgba(10,10,10,0.85);
-
-    border-top:
-        1px solid
-        rgba(203,164,88,0.25);
-
-    border-bottom:
-        1px solid
-        rgba(203,164,88,0.25);
-}
-
-.marquee-track {
-    display:
-        flex;
-
-    width:
-        max-content;
-
-    animation:
-        marquee 25s linear infinite;
-}
-
-.marquee-item {
-    padding:
-        15px 30px;
-
-    white-space:
-        nowrap;
-
-    color:
-        var(--gold-light);
-
-    font-size:
-        13px;
-
-    font-weight:
-        700;
-}
-
-@keyframes marquee {
-    from {
-        transform:
-            translateX(0);
-    }
-
-    to {
-        transform:
-            translateX(-50%);
-    }
-}
-
-
-/* =========================================================
-   SECTION BASE
-========================================================= */
-
-section {
-    position: relative;
-}
-
-.section {
-    padding:
-        110px 0;
-}
-
-.section-heading {
-    text-align:
-        center;
-
-    max-width:
-        780px;
-
-    margin:
-        0 auto 60px;
-}
-
-.section-heading h2 {
-    font-size:
-        clamp(34px, 5vw, 58px);
-
-    line-height:
-        1.05;
-
-    margin-bottom:
-        18px;
-
-    letter-spacing:
-        -1.5px;
-}
-
-.section-heading p {
-    font-size:
-        17px;
-
-    line-height:
-        1.7;
-
-    color:
-        var(--dark-muted);
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about {
-    background:
-        var(--cream);
-}
-
-.about-grid {
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:
-        75px;
-
-    align-items:
-        center;
-}
-
-.about-text h2 {
-    font-size:
-        clamp(35px, 5vw, 58px);
-
-    line-height:
-        1;
-
-    margin-bottom:
-        25px;
-}
-
-.about-text h2 span {
-    color:
-        var(--gold);
-}
-
-.about-text p {
-    color:
-        #444;
-
-    font-size:
-        17px;
-
-    line-height:
-        1.8;
-
-    margin-bottom:
-        18px;
-}
-
-.about-image {
-    overflow:
-        hidden;
-
-    border-radius:
-        24px;
-
-    box-shadow:
-        var(--shadow);
-}
-
-.about-image img {
-    width:
-        100%;
-
-    height:
-        500px;
-
-    object-fit:
-        cover;
-
-    transition:
-        transform .7s ease;
-}
-
-.about-image:hover img {
-    transform:
-        scale(1.04);
-}
-
-
-/* =========================================================
-   SERVICES
-========================================================= */
-
-.services {
-    background:
-        #161616;
-
-    color:
-        white;
-}
-
-.services .section-heading p {
-    color:
-        #bcbcbc;
-}
-
-.services-grid {
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        20px;
-}
-
-.service-card {
-    background:
-        #222;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.07);
-
-    border-radius:
-        22px;
-
-    padding:
-        35px 28px;
-
-    min-height:
-        260px;
-
-    transition:
-        var(--transition);
-}
-
-.service-card:hover {
-    transform:
-        translateY(-8px);
-
-    border-color:
-        rgba(203,164,88,0.5);
-
-    box-shadow:
-        0 20px 45px
-        rgba(0,0,0,0.25);
-}
-
-.service-icon {
-    width:
-        58px;
-
-    height:
-        58px;
-
-    border-radius:
-        50%;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    background:
-        var(--gold);
-
-    color:
-        #111;
-
-    font-size:
-        25px;
-
-    margin-bottom:
-        25px;
-}
-
-.service-card h3 {
-    font-size:
-        21px;
-
-    margin-bottom:
-        14px;
-}
-
-.service-card p {
-    color:
-        #c6c6c6;
-
-    line-height:
-        1.6;
-
-    font-size:
-        14px;
-}
-
-
-/* =========================================================
-   FLEET & HOSPITALITY
-========================================================= */
-
-.fleet-hospitality {
-    background:
-        #26342b;
-
-    color:
-        white;
-}
-
-.fleet-hospitality .section-heading p {
-    color:
-        rgba(255,255,255,0.78);
-}
-
-.fleet-gallery {
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap:
-        22px;
-}
-
-.gallery-card {
-    background:
-        #18231d;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.1);
-
-    border-radius:
-        20px;
-
-    overflow:
-        hidden;
-
-    transition:
-        var(--transition);
-}
-
-.gallery-card:hover {
-    transform:
-        translateY(-7px);
-
-    box-shadow:
-        0 20px 45px
-        rgba(0,0,0,0.3);
-}
-
-.gallery-card img {
-    width:
-        100%;
-
-    height:
-        360px;
-
-    object-fit:
-        cover;
-}
-
-.gallery-content {
-    padding:
-        20px;
-}
-
-.gallery-content h3 {
-    color:
-        var(--gold-light);
-
-    font-size:
-        19px;
-
-    margin-bottom:
-        8px;
-}
-
-.gallery-content p {
-    color:
-        rgba(255,255,255,0.78);
-
-    font-size:
-        14px;
-
-    line-height:
-        1.5;
-}
-
-
-/* =========================================================
-   FLEET
-========================================================= */
-
-.fleet {
-    background:
-        #111;
-
-    color:
-        white;
-}
-
-.fleet .section-heading p {
-    color:
-        #bbb;
-}
-
-.fleet-grid {
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap:
-        18px;
-}
-
-.fleet-card {
-    background:
-        #1b1b1b;
-
-    padding:
-        12px;
-
-    border-radius:
-        20px;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.06);
-
-    transition:
-        var(--transition);
-}
-
-.fleet-card:hover {
-    transform:
-        translateY(-8px);
-
-    border-color:
-        rgba(203,164,88,0.4);
-}
-
-.fleet-card img {
-    width:
-        100%;
-
-    height:
-        220px;
-
-    object-fit:
-        cover;
-
-    border-radius:
-        15px;
-}
-
-.fleet-info {
-    padding:
-        17px 8px 10px;
-}
-
-.fleet-info h3 {
-    font-size:
-        18px;
-
-    margin-bottom:
-        7px;
-}
-
-.fleet-info p {
-    font-size:
-        13px;
-
-    color:
-        #aaa;
-
-    line-height:
-        1.5;
-}
-
-
-/* =========================================================
-   LEADERS
-========================================================= */
-
-.leaders {
-    background:
-        #111;
-
-    color:
-        white;
-}
-
-.leaders .section-heading p {
-    color:
-        #c7c7c7;
-}
-
-.leaders-grid {
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2, 280px);
-
-    justify-content:
-        center;
-
-    gap:
-        40px;
-}
-
-.leader {
-    text-align:
-        center;
-}
-
-.leader-image {
-    width:
-        100%;
-
-    aspect-ratio:
-        1 / 1;
-
-    overflow:
-        hidden;
-
-    margin-bottom:
-        18px;
-}
-
-.leader-image img {
-    width:
-        100%;
-
-    height:
-        100%;
-
-    object-fit:
-        cover;
-}
-
-.leader h3 {
-    font-size:
-        17px;
-
-    margin-bottom:
-        7px;
-}
-
-.leader p {
-    color:
-        var(--gold-light);
-
-    font-size:
-        11px;
-
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        1.2px;
-}
-
-
-/* =========================================================
-   WHY ORBIT
-========================================================= */
-
-.why {
-    background:
-        #151515;
-
-    color:
-        white;
-}
-
-.why-grid {
-    display:
-        grid;
-
-    grid-template-columns:
-        1.3fr .7fr;
-
-    gap:
-        70px;
-
-    align-items:
-        center;
-}
-
-.why h2 {
-    font-size:
-        clamp(38px, 5vw, 58px);
-
-    margin-bottom:
-        35px;
-}
-
-.why-item {
-    padding:
-        0 0 20px;
-
-    margin-bottom:
-        20px;
-
-    border-bottom:
-        1px solid
-        rgba(203,164,88,0.5);
-}
-
-.why-item h3 {
-    font-size:
-        18px;
-
-    margin-bottom:
-        7px;
-}
-
-.why-item p {
-    color:
-        #c2c2c2;
-
-    line-height:
-        1.55;
-
-    font-size:
-        14px;
-}
-
-.why-badge {
-    width:
-        270px;
-
-    height:
-        270px;
-
-    border-radius:
-        50%;
-
-    background:
-        var(--gold);
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    padding:
-        40px;
-
-    color:
-        #111;
-
-    font-size:
-        27px;
-
-    font-weight:
-        800;
-
-    line-height:
-        1.05;
-
-    transform:
-        rotate(-5deg);
-
-    transition:
-        var(--transition);
+:root{
+  --black:#111111;
+  --black2:#171717;
+  --cream:#f5f1e9;
+  --gold:#c9a354;
+  --gold2:#e0bb67;
+  --white:#ffffff;
+  --muted:#b9b9b9;
+  --line:rgba(255,255,255,.13);
+  --dark-green:#1e3027;
+  --shadow:0 18px 45px rgba(0,0,0,.18);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--black);
+  color:var(--white);
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+button,input,select,textarea{font:inherit}
+
+.container{width:min(1180px,92%);margin:auto}
+.section{padding:90px 0}
+.section-title{
+  font-size:clamp(2rem,4vw,3.4rem);
+  line-height:1.05;
+  margin-bottom:14px;
+  letter-spacing:-1.5px;
+}
+.section-subtitle{
+  color:#cfcfcf;
+  max-width:720px;
+  line-height:1.65;
+}
+.gold{color:var(--gold2)}
+
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:1000;
+  background:rgba(10,10,10,.78);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.logo{
+  width:88px;
+  height:58px;
+  object-fit:contain;
+  object-position:center;
+}
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:28px;
+  font-size:.88rem;
+  font-weight:700;
+}
+.nav-links a{
+  color:#eee;
+  transition:.25s ease;
+}
+.nav-links a:hover{color:var(--gold2)}
+.nav-cta{
+  background:var(--gold);
+  color:#111!important;
+  padding:11px 17px;
+  border-radius:999px;
+}
+.menu-btn{
+  display:none;
+  width:48px;height:48px;
+  border:1px solid rgba(255,255,255,.2);
+  border-radius:50%;
+  background:#171717;
+  position:relative;
+  cursor:pointer;
+}
+.menu-btn span{
+  position:absolute;
+  left:14px;
+  width:20px;height:2px;
+  background:white;
+  transition:.35s ease;
+}
+.menu-btn span:nth-child(1){top:17px}
+.menu-btn span:nth-child(2){top:23px}
+.menu-btn span:nth-child(3){top:29px}
+.menu-btn.active span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn.active span:nth-child(2){opacity:0}
+.menu-btn.active span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+.mobile-menu{
+  position:fixed;
+  top:78px;right:0;
+  width:min(330px,90%);
+  background:#111;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:0 0 0 22px;
+  padding:22px;
+  transform:translateX(110%);
+  transition:.4s cubic-bezier(.7,0,.2,1);
+  box-shadow:var(--shadow);
+}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{
+  display:block;
+  padding:15px 10px;
+  border-bottom:1px solid var(--line);
+  font-weight:700;
+}
+
+.hero{
+  min-height:100svh;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(0,0,0,.78) 0%,rgba(0,0,0,.48) 43%,rgba(0,0,0,.16) 100%);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  padding:150px 0 90px;
+  max-width:760px;
+}
+.hero-kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:var(--gold2);
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:.78rem;
+  margin-bottom:18px;
+}
+.hero-kicker::before{
+  content:"";
+  width:38px;height:2px;
+  background:var(--gold2);
+}
+.hero h1{
+  font-size:clamp(3rem,8vw,7rem);
+  line-height:.9;
+  letter-spacing:-4px;
+  margin-bottom:25px;
+}
+.hero p{
+  max-width:650px;
+  color:#eee;
+  font-size:clamp(1rem,2vw,1.2rem);
+  line-height:1.65;
+}
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:50px;
+  padding:0 24px;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-weight:800;
+  cursor:pointer;
+  transition:.25s ease;
+}
+.btn-gold{background:var(--gold);color:#111}
+.btn-gold:hover{transform:translateY(-2px);background:var(--gold2)}
+.btn-outline{border-color:rgba(255,255,255,.45);color:white}
+.btn-outline:hover{background:white;color:#111}
+.hero-badge{
+  position:absolute;
+  right:5%;
+  bottom:8%;
+  z-index:3;
+  width:180px;height:180px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.22);
+  background:rgba(0,0,0,.28);
+  backdrop-filter:blur(8px);
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:25px;
+  animation:float 4s ease-in-out infinite;
+}
+.hero-badge strong{font-size:2rem;color:var(--gold2);display:block}
+.hero-badge span{font-size:.75rem;line-height:1.4}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+.stats{
+  background:var(--gold);
+  color:#111;
+  padding:24px 0;
+}
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.stat{text-align:center}
+.stat strong{font-size:1.8rem;display:block}
+.stat span{font-size:.82rem;font-weight:700}
+
+.about{background:var(--cream);color:#111}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.about .section-subtitle{color:#555}
+.about-card{
+  background:#111;
+  color:white;
+  padding:38px;
+  border-radius:28px;
+  box-shadow:var(--shadow);
+}
+.about-card h3{font-size:2rem;margin-bottom:12px}
+.about-card p{color:#ccc;line-height:1.7}
+.check-list{list-style:none;margin-top:25px}
+.check-list li{
+  display:flex;gap:12px;
+  padding:12px 0;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.check-list li::before{
+  content:"✓";
+  color:var(--gold2);
+  font-weight:900;
+}
+
+.services{background:#151515}
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+.service-card{
+  background:#1d1d1d;
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:30px;
+  transition:.3s ease;
+}
+.service-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(201,163,84,.5);
+}
+.service-icon{
+  width:54px;height:54px;
+  display:grid;place-items:center;
+  border-radius:16px;
+  background:rgba(201,163,84,.14);
+  color:var(--gold2);
+  font-size:1.5rem;
+  margin-bottom:22px;
+}
+.service-card h3{font-size:1.2rem;margin-bottom:10px}
+.service-card p{color:#bbb;line-height:1.6}
+
+.gallery{background:var(--dark-green)}
+.gallery-head{text-align:center}
+.gallery-head .section-subtitle{margin:auto}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:26px;
+  margin-top:42px;
+}
+.gallery-card{
+  background:#14211b;
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:22px;
+  overflow:hidden;
+  transition:.3s ease;
+}
+.gallery-card:hover{
+  transform:translateY(-7px);
+  border-color:rgba(201,163,84,.55);
+}
+.gallery-card img{
+  width:100%;
+  height:270px;
+  object-fit:cover;
+}
+.gallery-info{padding:24px}
+.gallery-info h3{
+  color:var(--gold2);
+  font-size:1.3rem;
+  margin-bottom:10px;
+}
+.gallery-info p{color:#e2e2e2;line-height:1.55}
+
+.fleet{background:#111}
+.fleet-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  margin-top:40px;
+}
+.fleet-card{
+  background:#1b1b1b;
+  border:1px solid var(--line);
+  border-radius:20px;
+  overflow:hidden;
+  transition:.3s;
+}
+.fleet-card:hover{transform:translateY(-6px)}
+.fleet-card img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+}
+.fleet-info{padding:20px}
+.fleet-info h3{font-size:1.1rem;margin-bottom:8px}
+.fleet-info p{color:#aaa;font-size:.9rem;line-height:1.5}
+
+.hospitality{
+  background:#0e0e0e;
+  padding:0;
+}
+.hospitality img{
+  width:100%;
+  max-height:760px;
+  object-fit:cover;
+  object-position:center;
+}
+
+.leaders{
+  background:var(--cream);
+  color:#111;
+}
+.leaders-head{text-align:center;max-width:800px;margin:auto}
+.leaders-head .section-subtitle{color:#666;margin:auto}
+.leader-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,330px));
+  justify-content:center;
+  gap:50px;
+  margin-top:48px;
+}
+.leader{text-align:center}
+.leader img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  object-position:center top;
+  border-radius:22px;
+  background:#ddd;
+  box-shadow:var(--shadow);
+}
+.leader h3{margin-top:18px;font-size:1.1rem}
+.leader p{
+  margin-top:6px;
+  color:#a57b26;
+  font-size:.72rem;
+  font-weight:800;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
+}
+
+.why{background:#111}
+.why-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:70px;
+  align-items:start;
+}
+.why-list{margin-top:25px}
+.why-item{
+  padding:20px 0;
+  border-bottom:1px solid rgba(201,163,84,.55);
+}
+.why-item h3{font-size:1.1rem;margin-bottom:6px}
+.why-item p{color:#bbb;line-height:1.55;font-size:.94rem}
+.trust{
+  background:var(--gold);
+  color:#111;
+  border-radius:70px;
+  padding:35px;
+  font-size:2rem;
+  font-weight:800;
+  line-height:1.05;
+  position:sticky;
+  top:120px;
+}
+
+.contact{background:#111}
+.contact-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:70px;
+}
+.contact-details h2{font-size:clamp(2.3rem,5vw,4rem);margin-bottom:30px}
+.contact-item{margin:24px 0}
+.contact-item span{
+  display:block;
+  color:var(--gold2);
+  font-weight:800;
+  font-size:.75rem;
+  letter-spacing:1.2px;
+  margin-bottom:5px;
+}
+.contact-item p{color:#ddd;line-height:1.5}
+.form{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{
+  color:#ccc;
+  font-size:.75rem;
+  font-weight:700;
+}
+.field input,.field select,.field textarea{
+  width:100%;
+  background:#121212;
+  color:white;
+  border:1px solid #626262;
+  border-radius:10px;
+  padding:12px 13px;
+  outline:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--gold2);
+}
+.field textarea{min-height:120px;resize:vertical}
+.submit{
+  grid-column:1/-1;
+  width:100%;
+  border:0;
+  background:var(--gold);
+  color:#111;
+  border-radius:999px;
+  min-height:50px;
+  font-weight:900;
+  cursor:pointer;
+}
+.submit:hover{background:var(--gold2)}
+
+.cta-wrap{background:var(--cream);padding:45px 0}
+.cta{
+  background:#111;
+  border-radius:70px;
+  padding:25px 35px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.cta h2{font-size:clamp(2rem,5vw,3.5rem)}
+.cta-arrow{
+  width:48px;height:48px;
+  display:grid;place-items:center;
+  border-radius:50%;
+  background:var(--gold);
+  color:#111;
+  font-size:1.4rem;
+}
+
+footer{
+  background:#090909;
+  padding:30px 0;
+  border-top:1px solid var(--line);
+}
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  color:#999;
+  font-size:.85rem;
+}
+.whatsapp{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:1100;
+  width:62px;height:62px;
+  border-radius:50%;
+  background:#25D366;
+  color:white;
+  display:grid;
+  place-items:center;
+  font-size:1.8rem;
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 10px 30px rgba(0,0,0,.35),0 0 0 0 rgba(37,211,102,.35)}
+  50%{box-shadow:0 10px 30px rgba(0,0,0,.35),0 0 0 12px rgba(37,211,102,0)}
+}
+
+.reveal{
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:1000px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .fleet-grid{grid-template-columns:repeat(2,1fr)}
+  .about-grid,.why-grid,.contact-grid{grid-template-columns:1fr}
+  .trust{position:static}
+}
+@media(max-width:700px){
+  .nav{height:70px}
+  .logo{width:72px;height:48px}
+  .mobile-menu{top:70px}
+  .hero-content{padding:130px 0 70px}
+  .hero h1{letter-spacing:-2px}
+  .hero-badge{width:120px;height:120px;right:4%;bottom:5%;padding:15px}
+  .hero-badge strong{font-size:1.3rem}
+  .hero-badge span{font-size:.62rem}
+  .section{padding:65px 0}
+  .stats-grid,.service-grid,.gallery-grid,.fleet-grid,.leader-grid{grid-template-columns:1fr}
+  .gallery-card img{height:240px}
+  .fleet-card img{height:210px}
+  .leader-grid{max-width:360px;margin-left:auto;margin-right:auto;gap:35px}
+  .form{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .submit{grid-column:auto}
+  .cta{
+    border-radius:40px;
+    padding:20px 24px;
+  }
+  .cta-arrow{flex:0 0 auto}
+  .footer-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:430px){
+  .container{width:90%}
+  .hero-badge{display:none}
+  .hero p{font-size:.96rem}
+  .btn{width:100%}
+  .hero-actions{display:grid}
+  .gallery-card img{height:220px}
+  .whatsapp{width:56px;height:56px;right:15px;bottom:15px}
 }
-
-.why-badge:hover {
-    transform:
-        rotate(0deg)
-        scale(1.05);
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact {
-    background:
-        #111;
-
-    color:
-        white;
-}
-
-.contact-grid {
-    display:
-        grid;
-
-    grid-template-columns:
-        .8fr 1.2fr;
-
-    gap:
-        80px;
-}
-
-.contact-info h2 {
-    font-size:
-        clamp(38px, 5vw, 58px);
-
-    margin-bottom:
-        35px;
-}
-
-.contact-detail {
-    margin-bottom:
-        25px;
-}
-
-.contact-detail span {
-    display:
-        block;
-
-    color:
-        var(--gold-light);
-
-    font-size:
-        12px;
-
-    font-weight:
-        700;
-
-    letter-spacing:
-        1px;
-
-    margin-bottom:
-        7px;
-
-    text-transform:
-        uppercase;
-}
-
-.contact-detail p,
-.contact-detail a {
-    color:
-        #ddd;
-
-    font-size:
-        15px;
-}
-
-.contact-detail a:hover {
-    color:
-        var(--gold-light);
-}
-
-
-/* =========================================================
-   FORM
-========================================================= */
-
-.contact-form {
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:
-        17px;
-}
-
-.form-group {
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    gap:
-        7px;
-}
-
-.form-group.full {
-    grid-column:
-        1 / -1;
-}
-
-.form-group label {
-    font-size:
-        12px;
-
-    color:
-        #ccc;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-    width:
-        100%;
-
-    border:
-        1px solid
-        #555;
-
-    background:
-        transparent;
-
-    color:
-        white;
-
-    border-radius:
-        12px;
-
-    padding:
-        14px 15px;
-
-    outline:
-        none;
-
-    transition:
-        var(--transition);
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-    border-color:
-        var(--gold);
-}
-
-.form-group select option {
-    background:
-        #111;
-
-    color:
-        white;
-}
-
-.form-group textarea {
-    min-height:
-        120px;
-
-    resize:
-        vertical;
-}
-
-.submit-btn {
-    grid-column:
-        1 / -1;
-
-    border:
-        none;
-
-    background:
-        var(--gold);
-
-    color:
-        #111;
-
-    border-radius:
-        12px;
-
-    padding:
-        15px;
-
-    font-weight:
-        800;
-
-    cursor:
-        pointer;
-
-    transition:
-        var(--transition);
-}
-
-.submit-btn:hover {
-    background:
-        var(--gold-light);
-
-    transform:
-        translateY(-3px);
-}
-
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.cta {
-    padding:
-        70px 0;
-
-    background:
-        var(--cream);
-}
-
-.cta-box {
-    background:
-        #111;
-
-    border-radius:
-        80px;
-
-    padding:
-        25px 30px 25px 45px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        space-between;
-
-    gap:
-        30px;
-}
-
-.cta-box h2 {
-    color:
-        white;
-
-    font-size:
-        clamp(32px, 5vw, 55px);
-}
-
-.cta-arrow {
-    width:
-        60px;
-
-    height:
-        60px;
-
-    min-width:
-        60px;
-
-    border-radius:
-        50%;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    background:
-        var(--gold);
-
-    color:
-        #111;
-
-    font-size:
-        24px;
-
-    transition:
-        var(--transition);
-}
-
-.cta-box:hover .cta-arrow {
-    transform:
-        rotate(45deg);
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.footer {
-    background:
-        #0b0b0b;
-
-    color:
-        #999;
-
-    padding:
-        30px 0;
-
-    text-align:
-        center;
-
-    font-size:
-        13px;
-}
-
-.footer strong {
-    color:
-        var(--gold);
-}
-
-
-/* =========================================================
-   WHATSAPP BUTTON
-========================================================= */
-
-.whatsapp {
-    position:
-        fixed;
-
-    right:
-        22px;
-
-    bottom:
-        22px;
-
-    width:
-        62px;
-
-    height:
-        62px;
-
-    border-radius:
-        50%;
-
-    background:
-        #25D366;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    color:
-        white;
-
-    z-index:
-        9997;
-
-    box-shadow:
-        0 10px 35px
-        rgba(0,0,0,0.3);
-
-    transition:
-        var(--transition);
-
-    animation:
-        whatsappPulse 2.5s infinite;
-}
-
-.whatsapp:hover {
-    transform:
-        scale(1.1);
-
-    animation:
-        none;
-}
-
-.whatsapp svg {
-    width:
-        31px;
-
-    height:
-        31px;
-
-    fill:
-        white;
-}
-
-@keyframes whatsappPulse {
-
-    0%,
-    100% {
-        box-shadow:
-            0 10px 35px
-            rgba(37,211,102,0.25);
-    }
-
-    50% {
-        box-shadow:
-            0 10px 45px
-            rgba(37,211,102,0.55);
-    }
-}
-
-
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
-
-.reveal {
-    opacity:
-        0;
-
-    transform:
-        translateY(35px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.reveal.visible {
-    opacity:
-        1;
-
-    transform:
-        translateY(0);
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 1000px) {
-
-    .nav-links {
-        display:
-            none;
-    }
-
-    .menu-button {
-        display:
-            block;
-    }
-
-    .hero {
-        min-height:
-            750px;
-    }
-
-    .about-grid {
-        gap:
-            40px;
-    }
-
-    .services-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .fleet-grid {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .fleet-gallery {
-        grid-template-columns:
-            repeat(2, 1fr);
-    }
-
-    .why-grid {
-        grid-template-columns:
-            1fr;
-    }
-
-    .why-badge {
-        margin:
-            10px auto 0;
-    }
-
-    .contact-grid {
-        grid-template-columns:
-            1fr;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .container {
-        width:
-            min(
-                calc(100% - 28px),
-                600px
-            );
-    }
-
-    .header {
-        height:
-            68px;
-    }
-
-    .header.scrolled {
-        height:
-            64px;
-    }
-
-    .logo img {
-        width:
-            120px;
-    }
-
-    .menu-button {
-        width:
-            44px;
-
-        height:
-            44px;
-    }
-
-    .hero {
-        min-height:
-            720px;
-    }
-
-    .hero::before {
-        background-position:
-            center;
-    }
-
-    .hero-content {
-        padding:
-            80px 10px 100px;
-    }
-
-    .hero h1 {
-        font-size:
-            clamp(39px, 11vw, 55px);
-
-        letter-spacing:
-            -2px;
-    }
-
-    .hero p {
-        font-size:
-            15px;
-
-        line-height:
-            1.55;
-    }
-
-    .hero-buttons {
-        flex-direction:
-            column;
-
-        width:
-            100%;
-
-        max-width:
-            310px;
-
-        margin:
-            0 auto;
-    }
-
-    .btn {
-        width:
-            100%;
-    }
-
-    .section {
-        padding:
-            75px 0;
-    }
-
-    .section-heading {
-        margin-bottom:
-            40px;
-    }
-
-    .section-heading h2 {
-        font-size:
-            36px;
-    }
-
-    .section-heading p {
-        font-size:
-            15px;
-    }
-
-    .about-grid {
-        grid-template-columns:
-            1fr;
-
-        gap:
-            35px;
-    }
-
-    .about-text h2 {
-        font-size:
-            40px;
-    }
-
-    .about-text p {
-        font-size:
-            15px;
-    }
-
-    .about-image img {
-        height:
-            350px;
-    }
-
-    .services-grid {
-        grid-template-columns:
-            1fr;
-    }
-
-    .service-card {
-        min-height:
-            auto;
-
-        padding:
-            28px 23px;
-    }
-
-    .fleet-gallery {
-        grid-template-columns:
-            1fr;
-    }
-
-    .gallery-card img {
-        height:
-            320px;
-    }
-
-    .fleet-grid {
-        grid-template-columns:
-            1fr 1fr;
-
-        gap:
-            12px;
-    }
-
-    .fleet-card {
-        padding:
-            8px;
-
-        border-radius:
-            15px;
-    }
-
-    .fleet-card img {
-        height:
-            150px;
-
-        border-radius:
-            11px;
-    }
-
-    .fleet-info {
-        padding:
-            12px 5px 7px;
-    }
-
-    .fleet-info h3 {
-        font-size:
-            15px;
-    }
-
-    .fleet-info p {
-        font-size:
-            12px;
-    }
-
-    .leaders-grid {
-        grid-template-columns:
-            1fr 1fr;
-
-        gap:
-            15px;
-    }
-
-    .leader h3 {
-        font-size:
-            14px;
-    }
-
-    .leader p {
-        font-size:
-            9px;
-    }
-
-    .why-grid {
-        gap:
-            35px;
-    }
-
-    .why-badge {
-        width:
-            220px;
-
-        height:
-            220px;
-
-        font-size:
-            23px;
-    }
-
-    .contact-grid {
-        gap:
-            45px;
-    }
-
-    .contact-form {
-        grid-template-columns:
-            1fr;
-
-        gap:
-            15px;
-    }
-
-    .form-group.full {
-        grid-column:
-            auto;
-    }
-
-    .submit-btn {
-        grid-column:
-            auto;
-    }
-
-    .cta {
-        padding:
-            45px 0;
-    }
-
-    .cta-box {
-        border-radius:
-            30px;
-
-        padding:
-            25px;
-
-        gap:
-            20px;
-    }
-
-    .cta-box h2 {
-        font-size:
-            35px;
-    }
-
-    .cta-arrow {
-        width:
-            50px;
-
-        min-width:
-            50px;
-
-        height:
-            50px;
-    }
-
-    .whatsapp {
-        width:
-            57px;
-
-        height:
-            57px;
-
-        right:
-            16px;
-
-        bottom:
-            16px;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 390px) {
-
-    .hero {
-        min-height:
-            680px;
-    }
-
-    .hero h1 {
-        font-size:
-            37px;
-    }
-
-    .fleet-grid {
-        grid-template-columns:
-            1fr;
-    }
-
-    .fleet-card img {
-        height:
-            210px;
-    }
-
-    .leaders-grid {
-        grid-template-columns:
-            1fr;
-        max-width:
-            270px;
-
-        margin:
-            auto;
-    }
-
-    .cta-box {
-        padding:
-            22px;
-    }
-
-    .cta-box h2 {
-        font-size:
-            29px;
-    }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior:
-            auto !important;
-
-        animation-duration:
-            0.01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-
-        transition-duration:
-            0.01ms !important;
-    }
-}
-
 </style>
 </head>
 
-
 <body>
 
+<header>
+  <div class="container nav">
+    <a href="#home" aria-label="Orbit Home">
+      <img class="logo" src="logo.jpeg" alt="Orbit Transport and Hospitality Services">
+    </a>
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#fleet">Fleet</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#leaders">Leadership</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
 
-<header class="header" id="header">
-
-    <div class="container nav">
-
-        <a href="#home" class="logo">
-
-            <img
-                src="logo.jpeg"
-                alt="Orbit Transport & Hospitality Services"
-            >
-
-        </a>
-
-
-        <!-- DESKTOP MENU -->
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="#home">Home</a>
-            </li>
-
-            <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#services">Services</a>
-            </li>
-
-            <li>
-                <a href="#fleet">Fleet</a>
-            </li>
-
-            <li>
-                <a href="#leaders">Leadership</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-
-        </ul>
-
-
-        <!-- MOBILE MENU BUTTON -->
-
-        <button
-            class="menu-button"
-            id="menuButton"
-            aria-label="Open navigation menu"
-            aria-expanded="false"
-        >
-
-            <span class="menu-line"></span>
-            <span class="menu-line"></span>
-            <span class="menu-line"></span>
-
-        </button>
-
-    </div>
-
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#services">Services</a>
+  <a href="#fleet">Fleet</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#leaders">Leadership</a>
+  <a href="#contact">Contact</a>
+</div>
 
-<!-- MOBILE MENU -->
+<main>
 
-<div
-    class="menu-overlay"
-    id="menuOverlay"
-></div>
-
-<nav
-    class="mobile-menu"
-    id="mobileMenu"
->
-
-    <ul>
-
-        <li>
-            <a href="#home">Home</a>
-        </li>
-
-        <li>
-            <a href="#about">About Orbit</a>
-        </li>
-
-        <li>
-            <a href="#services">Our Services</a>
-        </li>
-
-        <li>
-            <a href="#fleet">Our Fleet</a>
-        </li>
-
-        <li>
-            <a href="#leaders">Leadership</a>
-        </li>
-
-        <li>
-            <a href="#contact">Contact</a>
-        </li>
-
-    </ul>
-
-</nav>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section
-    class="hero"
-    id="home"
->
-
-    <div class="hero-content">
-
-        <h1>
-            Driving excellence.<br>
-            <span>Delivering trust.</span>
-        </h1>
-
-        <p>
-            Orbit is Qatar's dependable partner for staff
-            transportation, executive transfers, heavy equipment
-            and hospitality services — built on safety,
-            punctuality and a customer-first approach.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a
-                href="#contact"
-                class="btn btn-gold"
-            >
-                Request a Quote
-            </a>
-
-            <a
-                href="#services"
-                class="btn btn-outline"
-            >
-                Explore Services
-            </a>
-
-        </div>
-
+<section class="hero" id="home">
+  <img class="hero-bg" src="home.png" alt="Doha, Qatar">
+  <div class="container hero-content reveal">
+    <div class="hero-kicker">Transport & Hospitality Services</div>
+    <h1>Moving People.<br><span class="gold">Delivering Trust.</span></h1>
+    <p>
+      Professional transportation, fleet leasing, hospitality and support
+      solutions designed around your business, event and operational needs in Doha, Qatar.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#contact">Get Started</a>
+      <a class="btn btn-outline" href="#fleet">Explore Our Fleet</a>
     </div>
-
-
-    <!-- MARQUEE -->
-
-    <div class="marquee">
-
-        <div class="marquee-track">
-
-            <div class="marquee-item">
-                50+ Fleet
-            </div>
-
-            <div class="marquee-item">
-                •
-            </div>
-
-            <div class="marquee-item">
-                24/7 Support
-            </div>
-
-            <div class="marquee-item">
-                •
-            </div>
-
-            <div class="marquee-item">
-                100% Insured
-            </div>
-
-            <div class="marquee-item">
-                •
-            </div>
-
-            <div class="marquee-item">
-                Qatar Based
-            </div>
-
-            <div class="marquee-item">
-                •
-            </div>
-
-            <div class="marquee-item">
-                Professional Drivers
-            </div>
-
-            <div class="marquee-item">
-                •
-            </div>
-
-
-            <!-- DUPLICATE -->
-
-            <div class="marquee-item">
-                50+ Fleet
-            </div>
-
-            <div class="marquee-item">
-                •
-            </div>
-
-            <div class="marquee-item">
-                24/7 Support
-            </div>
-
-            <div class="marquee-item">
-                •
-            </div>
-
-            <div class="marquee-item">
-                100% Insured
-            </div>
-
-            <div class="marquee-item">
-                •
-            </div>
-
-            <div class="marquee-item">
-                Qatar Based
-            </div>
-
-            <div class="marquee-item">
-                •
-            </div>
-
-            <div class="marquee-item">
-                Professional Drivers
-            </div>
-
-            <div class="marquee-item">
-                •
-            </div>
-
-        </div>
-
+  </div>
+  <div class="hero-badge">
+    <div>
+      <strong>24/7</strong>
+      <span>Professional support & reliable operations</span>
     </div>
-
+  </div>
 </section>
 
-
-<!-- =====================================================
-     ABOUT
-===================================================== -->
-
-<section
-    class="section about"
-    id="about"
->
-
-    <div class="container">
-
-        <div class="about-grid reveal">
-
-            <div class="about-text">
-
-                <h2>
-                    Orbit: Excellence
-                    <span>in Qatar</span>
-                </h2>
-
-                <p>
-                    Orbit for Transport & Hospitality Services
-                    is a Qatar-based provider delivering safe,
-                    reliable, and efficient transportation
-                    solutions across diverse industries.
-                </p>
-
-                <p>
-                    We bridge the gap between logistics and
-                    hospitality excellence, ensuring that every
-                    journey is as smooth as it is safe.
-                </p>
-
-                <a
-                    href="#contact"
-                    class="btn btn-gold"
-                >
-                    Work With Us
-                </a>
-
-            </div>
-
-
-            <div class="about-image">
-
-                <img
-                    src="home.png"
-                    alt="Doha Qatar"
-                >
-
-            </div>
-
-        </div>
-
-    </div>
-
+<section class="stats">
+  <div class="container stats-grid">
+    <div class="stat"><strong>24/7</strong><span>Support</span></div>
+    <div class="stat"><strong>GPS</strong><span>Enabled Fleet</span></div>
+    <div class="stat"><strong>55+</strong><span>Seater Luxury Buses</span></div>
+    <div class="stat"><strong>Doha</strong><span>Qatar Based</span></div>
+  </div>
 </section>
 
-
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section
-    class="section services"
-    id="services"
->
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <h2>
-                Our Services
-            </h2>
-
-            <p>
-                Professional transportation, fleet,
-                equipment and hospitality solutions
-                tailored to your operational needs.
-            </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-            <article class="service-card reveal">
-
-                <div class="service-icon">
-                    🚌
-                </div>
-
-                <h3>
-                    Staff Transportation
-                </h3>
-
-                <p>
-                    Safe, comfortable and punctual employee
-                    pick-up, drop-off and shuttle services
-                    for your workforce.
-                </p>
-
-            </article>
-
-
-            <article class="service-card reveal">
-
-                <div class="service-icon">
-                    🚘
-                </div>
-
-                <h3>
-                    Executive Transportation
-                </h3>
-
-                <p>
-                    Premium vehicles for executives, clients
-                    and VIP transfers, including airport
-                    pick-ups.
-                </p>
-
-            </article>
-
-
-            <article class="service-card reveal">
-
-                <div class="service-icon">
-                    🏗️
-                </div>
-
-                <h3>
-                    Heavy Equipment Solutions
-                </h3>
-
-                <p>
-                    Supply of high-quality heavy equipment
-                    for construction and infrastructure
-                    projects.
-                </p>
-
-            </article>
-
-
-            <article class="service-card reveal">
-
-                <div class="service-icon">
-                    🍽️
-                </div>
-
-                <h3>
-                    Hospitality Services
-                </h3>
-
-                <p>
-                    Professional catering and hospitality
-                    services tailored to your event or
-                    operational needs.
-                </p>
-
-            </article>
-
-
-            <article class="service-card reveal">
-
-                <div class="service-icon">
-                    🚐
-                </div>
-
-                <h3>
-                    Vehicle Leasing & Rentals
-                </h3>
-
-                <p>
-                    Monthly, long-term and short-term rentals
-                    — bus, van and SUV, with professional
-                    drivers.
-                </p>
-
-            </article>
-
-
-            <article class="service-card reveal">
-
-                <div class="service-icon">
-                    ⚙️
-                </div>
-
-                <h3>
-                    Customised Solutions
-                </h3>
-
-                <p>
-                    School transport, event transportation
-                    and bespoke mobility plans built around
-                    your requirements.
-                </p>
-
-            </article>
-
-        </div>
-
+<section class="about section">
+  <div class="container about-grid">
+    <div class="reveal">
+      <div class="hero-kicker" style="color:#a47b28">About Orbit</div>
+      <h2 class="section-title">Transport built around <span class="gold" style="color:#a47b28">your needs.</span></h2>
+      <p class="section-subtitle">
+        Orbit combines dependable transportation with professional hospitality and operational support.
+        From executive transfers and staff movement to events, schools and long-term fleet requirements,
+        our goal is simple: safe, polished and dependable service.
+      </p>
     </div>
-
+    <div class="about-card reveal">
+      <h3>One partner. Multiple solutions.</h3>
+      <p>Tailored mobility and service solutions for businesses, events and organizations.</p>
+      <ul class="check-list">
+        <li>Professional drivers and trained teams</li>
+        <li>Flexible short-term and long-term rentals</li>
+        <li>Corporate, school and event transportation</li>
+        <li>Hospitality, guest and support services</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-
-<!-- =====================================================
-     FLEET & HOSPITALITY
-===================================================== -->
-
-<section
-    class="section fleet-hospitality"
->
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <h2>
-                Our Fleet & Hospitality
-            </h2>
-
-            <p>
-                A closer look at the vehicles and service
-                moments behind every Orbit project.
-            </p>
-
-        </div>
-
-
-        <div class="fleet-gallery">
-
-
-            <article class="gallery-card reveal">
-
-                <img
-                    src="fleet-sedan.jpg"
-                    alt="Executive Fleet"
-                >
-
-                <div class="gallery-content">
-
-                    <h3>
-                        Executive Fleet
-                    </h3>
-
-                    <p>
-                        Premium vehicles for corporate
-                        and VIP transfers.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="gallery-card reveal">
-
-                <img
-                    src="fleet-bus-luxury.jpg"
-                    alt="Luxury Bus Fleet"
-                >
-
-                <div class="gallery-content">
-
-                    <h3>
-                        Luxury Bus Fleet
-                    </h3>
-
-                    <p>
-                        55-seater luxury buses for large
-                        groups and school transport.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="gallery-card reveal">
-
-                <img
-                    src="hospitality.jpg"
-                    alt="Hospitality Excellence"
-                    onerror="this.src='home.png'"
-                >
-
-                <div class="gallery-content">
-
-                    <h3>
-                        Hospitality Excellence
-                    </h3>
-
-                    <p>
-                        Professional catering and guest
-                        services tailored to your needs.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
+<section class="services section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <div class="hero-kicker">What We Do</div>
+      <h2 class="section-title">Solutions that <span class="gold">move business forward.</span></h2>
+      <p class="section-subtitle">Professional services tailored to your event or operational needs.</p>
     </div>
 
+    <div class="service-grid">
+      <article class="service-card reveal">
+        <div class="service-icon">🚐</div>
+        <h3>Corporate & Event Transportation</h3>
+        <p>Reliable transportation for conferences, corporate movements, events, airport transfers and VIP requirements.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">🔑</div>
+        <h3>Vehicle Leasing & Rentals</h3>
+        <p>Monthly, long-term and short-term rentals — bus, van and SUV, with professional drivers.</p>
+      </article>
+
+      <article class="service-card reveal">
+        <div class="service-icon">⚙</div>
+        <h3>Customised Solutions</h3>
+        <p>School transport, event transportation and bespoke mobility plans built around your requirements.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
-
-<!-- =====================================================
-     FLEET
-===================================================== -->
-
-<section
-    class="section fleet"
-    id="fleet"
->
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <h2>
-                Our Fleet
-            </h2>
-
-            <p>
-                From executive sedans to luxury 55-seater
-                buses, our modern fleet is equipped with
-                GPS tracking and safety-first technology
-                for every requirement.
-            </p>
-
-        </div>
-
-
-        <div class="fleet-grid">
-
-
-            <article class="fleet-card reveal">
-
-                <img
-                    src="fleet-sedan.jpg"
-                    alt="Sedan Cars"
-                >
-
-                <div class="fleet-info">
-
-                    <h3>
-                        Sedan Cars
-                    </h3>
-
-                    <p>
-                        Executive & VIP transfers
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="fleet-card reveal">
-
-                <img
-                    src="fleet-suv.jpg"
-                    alt="SUVs"
-                >
-
-                <div class="fleet-info">
-
-                    <h3>
-                        SUVs
-                    </h3>
-
-                    <p>
-                        Comfort for small groups
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="fleet-card reveal">
-
-                <img
-                    src="fleet-7seater.jpg"
-                    alt="7-Seater Vehicles"
-                >
-
-                <div class="fleet-info">
-
-                    <h3>
-                        7-Seater Vehicles
-                    </h3>
-
-                    <p>
-                        Family & small teams
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="fleet-card reveal">
-
-                <img
-                    src="fleet-van.jpg"
-                    alt="15-Seater Vans"
-                >
-
-                <div class="fleet-info">
-
-                    <h3>
-                        15-Seater Vans
-                    </h3>
-
-                    <p>
-                        Group & staff shuttles
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="fleet-card reveal">
-
-                <img
-                    src="fleet-bus-mid.jpg"
-                    alt="22-35 Seater Buses"
-                >
-
-                <div class="fleet-info">
-
-                    <h3>
-                        22-35 Seater Buses
-                    </h3>
-
-                    <p>
-                        Corporate & school runs
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="fleet-card reveal">
-
-                <img
-                    src="fleet-bus-luxury.jpg"
-                    alt="50-55 Seater Luxury Buses"
-                >
-
-                <div class="fleet-info">
-
-                    <h3>
-                        50-55 Seater Luxury Buses
-                    </h3>
-
-                    <p>
-                        Large groups & events
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="fleet-card reveal">
-
-                <img
-                    src="heavy-equipment.jpg"
-                    alt="Heavy Equipment"
-                    onerror="this.src='fleet-bus-mid.jpg'"
-                >
-
-                <div class="fleet-info">
-
-                    <h3>
-                        Heavy Equipment
-                    </h3>
-
-                    <p>
-                        Supply of high-quality
-                        heavy equipment
-                    </p>
-
-                </div>
-
-            </article>
-
-
-            <article class="fleet-card reveal">
-
-                <img
-                    src="hospitality.jpg"
-                    alt="Hospitality Services"
-                    onerror="this.src='home.png'"
-                >
-
-                <div class="fleet-info">
-
-                    <h3>
-                        Hospitality Services
-                    </h3>
-
-                    <p>
-                        Professional catering &
-                        guest services
-                    </p>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
+<section class="gallery section" id="gallery">
+  <div class="container">
+    <div class="gallery-head reveal">
+      <div class="hero-kicker">Our Gallery</div>
+      <h2 class="section-title">Our Fleet & Hospitality</h2>
+      <p class="section-subtitle">A closer look at the vehicles and service moments behind every Orbit project.</p>
     </div>
 
+    <div class="gallery-grid">
+      <article class="gallery-card reveal">
+        <img src="fleet-sedan.jpg" alt="Executive sedan fleet" loading="lazy">
+        <div class="gallery-info">
+          <h3>Executive Fleet</h3>
+          <p>Premium vehicles for corporate and VIP transfers.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <img src="fleet-bus-luxury.jpg" alt="Luxury bus fleet" loading="lazy">
+        <div class="gallery-info">
+          <h3>Luxury Bus Fleet</h3>
+          <p>55-seater luxury buses for large groups and school transport.</p>
+        </div>
+      </article>
+
+      <article class="gallery-card reveal">
+        <img src="gallery-hospitality-services.png" alt="Orbit Hospitality Services" loading="lazy">
+        <div class="gallery-info">
+          <h3>Hospitality Excellence</h3>
+          <p>Professional hospitality, guest assistance, cleaning and support services.</p>
+        </div>
+      </article>
+    </div>
+  </div>
 </section>
 
-
-<!-- =====================================================
-     LEADERS
-===================================================== -->
-
-<section
-    class="section leaders"
-    id="leaders"
->
-
-    <div class="container">
-
-        <div class="section-heading reveal">
-
-            <h2>
-                The Leaders Behind Orbit
-            </h2>
-
-            <p>
-                Our leadership team is dedicated to operational
-                excellence and safety, ensuring every journey is
-                delivered with the highest standards of
-                professionalism and reliability.
-            </p>
-
-        </div>
-
-
-        <div class="leaders-grid">
-
-
-            <article class="leader reveal">
-
-                <div class="leader-image">
-
-                    <img
-                        src="Mohammed younus.jpeg"
-                        alt="Mohammed Younus"
-                    >
-
-                </div>
-
-                <h3>
-                    Mohammed Younus
-                </h3>
-
-                <p>
-                    CEO & Managing Director
-                </p>
-
-            </article>
-
-
-            <article class="leader reveal">
-
-                <div class="leader-image">
-
-                    <img
-                        src="Raziq.jpeg"
-                        alt="Raziq Ahmed"
-                    >
-
-                </div>
-
-                <h3>
-                    Raziq Ahmed
-                </h3>
-
-                <p>
-                    Project Head & General Manager
-                </p>
-
-            </article>
-
-
-        </div>
-
+<section class="fleet section" id="fleet">
+  <div class="container">
+    <div class="reveal">
+      <div class="hero-kicker">Our Fleet</div>
+      <h2 class="section-title">Choose the right vehicle for <span class="gold">every journey.</span></h2>
+      <p class="section-subtitle">From executive transfers to large-scale group movement, our fleet is designed for comfort, safety and reliability.</p>
     </div>
 
+    <div class="fleet-grid">
+      <article class="fleet-card reveal">
+        <img src="fleet-sedan.jpg" alt="Sedan Cars" loading="lazy">
+        <div class="fleet-info"><h3>Sedan Cars</h3><p>Executive & VIP transfers</p></div>
+      </article>
+
+      <article class="fleet-card reveal">
+        <img src="fleet-suv.jpg" alt="SUVs" loading="lazy">
+        <div class="fleet-info"><h3>SUVs</h3><p>Comfort for small groups</p></div>
+      </article>
+
+      <article class="fleet-card reveal">
+        <img src="fleet-7seater.jpg" alt="7-Seater Vehicles" loading="lazy">
+        <div class="fleet-info"><h3>7-Seater Vehicles</h3><p>Family & small teams</p></div>
+      </article>
+
+      <article class="fleet-card reveal">
+        <img src="fleet-van.jpg" alt="15-Seater Vans" loading="lazy">
+        <div class="fleet-info"><h3>15-Seater Vans</h3><p>Group & staff shuttles</p></div>
+      </article>
+
+      <article class="fleet-card reveal">
+        <img src="fleet-bus-mid.jpg" alt="22-35 Seater Buses" loading="lazy">
+        <div class="fleet-info"><h3>22-35 Seater Buses</h3><p>Corporate & school runs</p></div>
+      </article>
+
+      <article class="fleet-card reveal">
+        <img src="fleet-bus-luxury.jpg" alt="50-55 Seater Luxury Buses" loading="lazy">
+        <div class="fleet-info"><h3>50-55 Seater Luxury Buses</h3><p>Large groups & events</p></div>
+      </article>
+
+      <article class="fleet-card reveal">
+        <img src="heavy-equipment.jpg" alt="Heavy Equipment" loading="lazy">
+        <div class="fleet-info"><h3>Heavy Equipment</h3><p>Supply of high-quality heavy equipment</p></div>
+      </article>
+
+      <article class="fleet-card reveal">
+        <img src="toyota1.jpeg" alt="Toyota Coaster Bus" loading="lazy">
+        <div class="fleet-info"><h3>Toyota Coaster</h3><p>Comfortable and reliable group transportation</p></div>
+      </article>
+
+      <article class="fleet-card reveal">
+        <img src="toyota2.jpeg" alt="Toyota Coaster Buses" loading="lazy">
+        <div class="fleet-info"><h3>Toyota Coaster Fleet</h3><p>Professional transport for groups and staff</p></div>
+      </article>
+    </div>
+  </div>
 </section>
 
+<section class="hospitality" aria-label="Orbit Hospitality Services">
+  <img src="gallery-hospitality-services.png" alt="Orbit Hospitality Services" loading="lazy">
+</section>
 
-<!-- =====================================================
-     WHY ORBIT
-===================================================== -->
+<section class="leaders section" id="leaders">
+  <div class="container">
+    <div class="leaders-head reveal">
+      <div class="hero-kicker" style="color:#a47b28">Leadership</div>
+      <h2 class="section-title">The Leaders Behind Orbit</h2>
+      <p class="section-subtitle">
+        Our leadership team is dedicated to operational excellence and safety,
+        ensuring every journey is delivered with the highest standards of professionalism and reliability.
+      </p>
+    </div>
 
-<section class="section why">
+    <div class="leader-grid">
+      <article class="leader reveal">
+        <h3>Mohammed Younus</h3>
+        <p>CEO & Managing Director</p>
+      </article>
 
-    <div class="container">
+      <article class="leader reveal">
+        <h3>Raziq Ahmed</h3>
+        <p>Project Head & General Manager</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-        <div class="why-grid">
+<section class="why section">
+  <div class="container why-grid">
+    <div class="reveal">
+      <div class="hero-kicker">Why Orbit</div>
+      <h2 class="section-title">Built on <span class="gold">reliability.</span></h2>
 
-
-            <div class="reveal">
-
-                <h2>
-                    Why Orbit
-                </h2>
-
-
-                <div class="why-item">
-
-                    <h3>
-                        GPS-enabled Fleet
-                    </h3>
-
-                    <p>
-                        Real-time tracking ensures your assets
-                        are always visible and accounted for,
-                        providing total peace of mind for your
-                        business operations.
-                    </p>
-
-                </div>
-
-
-                <div class="why-item">
-
-                    <h3>
-                        24/7 Support
-                    </h3>
-
-                    <p>
-                        Our dedicated team is available around
-                        the clock to provide immediate
-                        assistance and ensure your transportation
-                        needs are met at all times.
-                    </p>
-
-                </div>
-
-
-                <div class="why-item">
-
-                    <h3>
-                        Professional Drivers
-                    </h3>
-
-                    <p>
-                        Our experienced drivers are trained
-                        professionals who prioritize safety
-                        and punctuality, delivering a premium
-                        experience for every passenger.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <div class="reveal">
-
-                <div class="why-badge">
-
-                    Driving Excellence.
-                    <br>
-                    Delivering Trust.
-
-                </div>
-
-            </div>
-
-
+      <div class="why-list">
+        <div class="why-item">
+          <h3>GPS-enabled Fleet</h3>
+          <p>Real-time tracking ensures your assets are always visible and accounted for, providing peace of mind for your business operations.</p>
         </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CONTACT
-===================================================== -->
-
-<section
-    class="section contact"
-    id="contact"
->
-
-    <div class="container">
-
-        <div class="contact-grid">
-
-
-            <div class="contact-info reveal">
-
-                <h2>
-                    Connect with Orbit
-                </h2>
-
-
-                <div class="contact-detail">
-
-                    <span>
-                        Phone
-                    </span>
-
-                    <a href="tel:+97470233812">
-                        +974 7023 3812
-                    </a>
-
-                </div>
-
-
-                <div class="contact-detail">
-
-                    <span>
-                        Email
-                    </span>
-
-                    <a href="mailto:orbittransportqa@gmail.com">
-                        orbittransportqa@gmail.com
-                    </a>
-
-                </div>
-
-
-                <div class="contact-detail">
-
-                    <span>
-                        Location
-                    </span>
-
-                    <p>
-                        Doha, Qatar — P.O. Box 13548
-                    </p>
-
-                </div>
-
-
-                <div class="contact-detail">
-
-                    <span>
-                        WhatsApp
-                    </span>
-
-                    <a
-                        href="https://wa.me/97470233812"
-                        target="_blank"
-                    >
-                        Chat with Orbit
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- FORM -->
-
-            <form
-                class="contact-form reveal"
-                id="whatsappForm"
-            >
-
-
-                <div class="form-group">
-
-                    <label>
-                        First Name *
-                    </label>
-
-                    <input
-                        type="text"
-                        id="firstName"
-                        required
-                        placeholder="First Name"
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-                        Last Name *
-                    </label>
-
-                    <input
-                        type="text"
-                        id="lastName"
-                        required
-                        placeholder="Last Name"
-                    >
-
-                </div>
-
-
-                <div class="form-group full">
-
-                    <label>
-                        Company
-                    </label>
-
-                    <input
-                        type="text"
-                        id="company"
-                        placeholder="Company Name"
-                    >
-
-                </div>
-
-
-                <div class="form-group full">
-
-                    <label>
-                        Email *
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        required
-                        placeholder="Email Address"
-                    >
-
-                </div>
-
-
-                <div class="form-group full">
-
-                    <label>
-                        Phone *
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="phone"
-                        required
-                        placeholder="Phone Number"
-                    >
-
-                </div>
-
-
-                <div class="form-group full">
-
-                    <label>
-                        Service Needed *
-                    </label>
-
-                    <select
-                        id="service"
-                        required
-                    >
-
-                        <option value="">
-                            Select a service
-                        </option>
-
-                        <option>
-                            Staff Transportation
-                        </option>
-
-                        <option>
-                            Executive Transportation
-                        </option>
-
-                        <option>
-                            Heavy Equipment
-                        </option>
-
-                        <option>
-                            Hospitality Services
-                        </option>
-
-                        <option>
-                            Vehicle Leasing & Rentals
-                        </option>
-
-                        <option>
-                            Customised Solutions
-                        </option>
-
-                        <option>
-                            Other
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="form-group full">
-
-                    <label>
-                        Message
-                    </label>
-
-                    <textarea
-                        id="message"
-                        placeholder="How can we help you?"
-                    ></textarea>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="submit-btn"
-                >
-                    Send Inquiry on WhatsApp
-                </button>
-
-
-            </form>
-
+        <div class="why-item">
+          <h3>24/7 Support</h3>
+          <p>Our dedicated team is available around the clock to provide immediate assistance and ensure your transportation needs are met at all times.</p>
         </div>
-
+        <div class="why-item">
+          <h3>Professional Drivers</h3>
+          <p>Our experienced drivers are trained professionals who prioritize safety and punctuality, delivering a premium experience for every passenger.</p>
+        </div>
+      </div>
     </div>
 
+    <div class="trust reveal">Driving Excellence.<br>Delivering Trust.</div>
+  </div>
 </section>
 
+<section class="contact section" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-details reveal">
+      <div class="hero-kicker">Contact Orbit</div>
+      <h2>Connect with <span class="gold">Orbit</span></h2>
 
-<!-- =====================================================
-     CTA
-===================================================== -->
-
-<section class="cta">
-
-    <div class="container">
-
-        <a
-            href="#contact"
-            class="cta-box"
-        >
-
-            <h2>
-                Get Started
-            </h2>
-
-            <span class="cta-arrow">
-                →
-            </span>
-
-        </a>
-
+      <div class="contact-item">
+        <span>PHONE</span>
+        <p>+974 7023 3812</p>
+      </div>
+      <div class="contact-item">
+        <span>EMAIL</span>
+        <p>orbittransportqa@gmail.com</p>
+      </div>
+      <div class="contact-item">
+        <span>LOCATION</span>
+        <p>Doha, Qatar – P.O. Box 13548</p>
+      </div>
     </div>
 
+    <form class="form reveal" id="whatsappForm">
+      <div class="field">
+        <label for="firstName">First Name *</label>
+        <input id="firstName" name="firstName" required>
+      </div>
+      <div class="field">
+        <label for="lastName">Last Name *</label>
+        <input id="lastName" name="lastName" required>
+      </div>
+      <div class="field full">
+        <label for="company">Company</label>
+        <input id="company" name="company">
+      </div>
+      <div class="field full">
+        <label for="email">Email *</label>
+        <input id="email" name="email" type="email" required>
+      </div>
+      <div class="field full">
+        <label for="phone">Phone *</label>
+        <input id="phone" name="phone" required>
+      </div>
+      <div class="field full">
+        <label for="service">Service Needed *</label>
+        <select id="service" name="service" required>
+          <option value="">Select a service</option>
+          <option>Corporate & Event Transportation</option>
+          <option>Vehicle Leasing & Rentals</option>
+          <option>School Transport</option>
+          <option>VIP / Executive Transfer</option>
+          <option>Hospitality Services</option>
+          <option>Heavy Equipment</option>
+          <option>Customised Solution</option>
+        </select>
+      </div>
+      <div class="field full">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="How can we help you?"></textarea>
+      </div>
+      <button class="submit" type="submit">Send Inquiry on WhatsApp</button>
+    </form>
+  </div>
 </section>
 
+<section class="cta-wrap">
+  <div class="container">
+    <a href="#contact" class="cta">
+      <h2>Get Started</h2>
+      <span class="cta-arrow">→</span>
+    </a>
+  </div>
+</section>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+</main>
 
-<footer class="footer">
-
-    <div class="container">
-
-        © <span id="year"></span>
-        <strong>Orbit Transport & Hospitality Services</strong>.
-        All Rights Reserved.
-
-    </div>
-
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Orbit for Transport & Hospitality Services. All rights reserved.</span>
+    <span>Doha, Qatar</span>
+  </div>
 </footer>
 
-
-<!-- =====================================================
-     WHATSAPP FLOATING BUTTON
-===================================================== -->
-
-<a
-    class="whatsapp"
-    href="https://wa.me/97470233812?text=Assalamu%20Alaikum%20Orbit%20Transport%20%26%20Hospitality%20Services.%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-    target="_blank"
-    aria-label="Chat with Orbit on WhatsApp"
->
-
-    <svg
-        viewBox="0 0 32 32"
-        aria-hidden="true"
-    >
-
-        <path d="
-        M16.02 2.5
-        C8.58 2.5 2.54 8.54 2.54 15.98
-        c0 2.38.62 4.7 1.8 6.74
-        L2.45 29.5l6.95-1.82
-        a13.45 13.45 0 0 0 6.62 1.74
-        h.01c7.43 0 13.47-6.04
-        13.47-13.47
-        C29.5 8.54 23.46 2.5 16.02 2.5z
-
-        M16.03 27.1
-        c-2.08 0-4.12-.56-5.9-1.62
-        l-.42-.25-4.13 1.08
-        1.1-4.02-.27-.43
-        a11.15 11.15 0 0 1-1.72-5.88
-        c0-6.14 5-11.14 11.14-11.14
-        6.14 0 11.13 5
-        11.13 11.14
-        0 6.14-4.99 11.12-11.13 11.12z
-
-        M22.15 18.2
-        c-.34-.17-2.02-1-2.33-1.11
-        -.31-.12-.54-.17-.77.17
-        -.23.35-.88 1.11-1.08 1.34
-        -.2.23-.4.26-.74.09
-        -.34-.17-1.43-.53-2.72-1.68
-        -1-.89-1.68-1.99-1.87-2.33
-        -.2-.35-.02-.53.15-.7
-        .15-.15.34-.4.51-.6
-        .17-.2.23-.35.34-.57
-        .12-.23.06-.43-.03-.6
-        -.09-.17-.77-1.86-1.06-2.54
-        -.28-.67-.56-.58-.77-.59
-        -.2-.01-.43-.01-.66-.01
-        -.23 0-.6.09-.91.43
-        -.31.34-1.2 1.17-1.2 2.86
-        0 1.69 1.23 3.32 1.4 3.55
-        .17.23 2.42 3.69 5.86 5.18
-        .82.35 1.46.56 1.96.72
-        .83.26 1.59.22 2.19.13
-        .67-.1 2.02-.83 2.31-1.63
-        .29-.8.29-1.49.2-1.63
-        -.08-.15-.31-.23-.65-.4z
-        "/>
-
-    </svg>
-
-</a>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+<a class="whatsapp" href="https://wa.me/97470233812?text=Assalamu%20Alaikum%20Orbit%20Transport%20%26%20Hospitality%20Services.%20I%20would%20like%20to%20make%20an%20inquiry." target="_blank" rel="noopener" aria-label="Chat with Orbit on WhatsApp">✆</a>
 
 <script>
+const menuBtn = document.getElementById('menuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+menuBtn.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  menuBtn.classList.toggle('active', open);
+  menuBtn.setAttribute('aria-expanded', open);
+});
 
-const menuButton =
-    document.getElementById("menuButton");
+document.querySelectorAll('.mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    menuBtn.classList.remove('active');
+    menuBtn.setAttribute('aria-expanded','false');
+  });
+});
 
-const mobileMenu =
-    document.getElementById("mobileMenu");
-
-const menuOverlay =
-    document.getElementById("menuOverlay");
-
-const mobileLinks =
-    document.querySelectorAll(
-        ".mobile-menu a"
-    );
-
-
-function openMenu() {
-
-    menuButton.classList.add("active");
-
-    mobileMenu.classList.add("open");
-
-    menuOverlay.classList.add("active");
-
-    menuButton.setAttribute(
-        "aria-expanded",
-        "true"
-    );
-
-    document.body.style.overflow =
-        "hidden";
-}
-
-
-function closeMenu() {
-
-    menuButton.classList.remove("active");
-
-    mobileMenu.classList.remove("open");
-
-    menuOverlay.classList.remove("active");
-
-    menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
-    document.body.style.overflow =
-        "";
-}
-
-
-menuButton.addEventListener(
-    "click",
-    () => {
-
-        if (
-            mobileMenu.classList.contains("open")
-        ) {
-            closeMenu();
-
-        } else {
-
-            openMenu();
-
-        }
-
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
     }
-);
+  });
+},{threshold:.12});
 
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-menuOverlay.addEventListener(
-    "click",
-    closeMenu
-);
+document.getElementById('whatsappForm').addEventListener('submit', function(e){
+  e.preventDefault();
 
+  const firstName = document.getElementById('firstName').value.trim();
+  const lastName = document.getElementById('lastName').value.trim();
+  const company = document.getElementById('company').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const service = document.getElementById('service').value;
+  const message = document.getElementById('message').value.trim();
 
-mobileLinks.forEach(
-    link => {
-
-        link.addEventListener(
-            "click",
-            closeMenu
-        );
-
-    }
-);
-
-
-/* =========================================================
-   HEADER SCROLL
-========================================================= */
-
-const header =
-    document.getElementById("header");
-
-
-window.addEventListener(
-    "scroll",
-    () => {
-
-        if (window.scrollY > 40) {
-
-            header.classList.add(
-                "scrolled"
-            );
-
-        } else {
-
-            header.classList.remove(
-                "scrolled"
-            );
-
-        }
-
-    },
-    { passive: true }
-);
-
-
-/* =========================================================
-   REVEAL ANIMATION
-========================================================= */
-
-const revealElements =
-    document.querySelectorAll(".reveal");
-
-
-const observer =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(
-                entry => {
-
-                    if (
-                        entry.isIntersecting
-                    ) {
-
-                        entry.target.classList.add(
-                            "visible"
-                        );
-
-                        observer.unobserve(
-                            entry.target
-                        );
-
-                    }
-
-                }
-            );
-
-        },
-        {
-            threshold: 0.12
-        }
-    );
-
-
-revealElements.forEach(
-    element => {
-
-        observer.observe(
-            element
-        );
-
-    }
-);
-
-
-/* =========================================================
-   WHATSAPP FORM
-========================================================= */
-
-const whatsappForm =
-    document.getElementById(
-        "whatsappForm"
-    );
-
-
-whatsappForm.addEventListener(
-    "submit",
-    function(event) {
-
-        event.preventDefault();
-
-
-        const firstName =
-            document.getElementById(
-                "firstName"
-            ).value.trim();
-
-
-        const lastName =
-            document.getElementById(
-                "lastName"
-            ).value.trim();
-
-
-        const company =
-            document.getElementById(
-                "company"
-            ).value.trim();
-
-
-        const email =
-            document.getElementById(
-                "email"
-            ).value.trim();
-
-
-        const phone =
-            document.getElementById(
-                "phone"
-            ).value.trim();
-
-
-        const service =
-            document.getElementById(
-                "service"
-            ).value;
-
-
-        const message =
-            document.getElementById(
-                "message"
-            ).value.trim();
-
-
-        const whatsappNumber =
-            "97470233812";
-
-
-        const text =
+  const text =
 `Assalamu Alaikum Orbit Transport & Hospitality Services,
 
 I would like to make an inquiry.
 
 Name: ${firstName} ${lastName}
-Company: ${company || "Not provided"}
+Company: ${company || 'Not provided'}
 Email: ${email}
 Phone: ${phone}
-Service Required: ${service}
+Service Needed: ${service}
+Message: ${message || 'No additional message'}
 
-Message:
-${message || "I would like to know more about your services."}
+Thank you.`;
 
-Thank you.
-I look forward to hearing from you.`;
-
-
-        const whatsappURL =
-            "https://wa.me/" +
-            whatsappNumber +
-            "?text=" +
-            encodeURIComponent(text);
-
-
-        window.open(
-            whatsappURL,
-            "_blank"
-        );
-
-    }
-);
-
-
-/* =========================================================
-   CURRENT YEAR
-========================================================= */
-
-document.getElementById(
-    "year"
-).textContent =
-    new Date().getFullYear();
-
-
-/* =========================================================
-   ESCAPE KEY CLOSE MENU
-========================================================= */
-
-document.addEventListener(
-    "keydown",
-    event => {
-
-        if (
-            event.key === "Escape" &&
-            mobileMenu.classList.contains("open")
-        ) {
-
-            closeMenu();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CLOSE MENU WHEN RESIZING TO DESKTOP
-========================================================= */
-
-window.addEventListener(
-    "resize",
-    () => {
-
-        if (
-            window.innerWidth > 1000
-        ) {
-
-            closeMenu();
-
-        }
-
-    }
-);
-
+  window.open(
+    'https://wa.me/97470233812?text=' + encodeURIComponent(text),
+    '_blank'
+  );
+});
 </script>
-
 
 </body>
 </html>
