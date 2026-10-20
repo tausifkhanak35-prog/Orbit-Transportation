@@ -104,7 +104,7 @@ h1,h2,h3,h4{
 .card-3d > *{transform:translateZ(30px);transform-style:preserve-3d}
 
 /* ============================================================
-   TRANSPARENT FIXED HEADER — works on all devices
+   TRANSPARENT FIXED HEADER
    ============================================================ */
 .site-header{
   position:fixed;
@@ -168,7 +168,6 @@ h1,h2,h3,h4{
 
 .header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
 
-/* Instagram icon button in header */
 .header-ig{
   width:42px;height:42px;border-radius:50%;
   display:grid;place-items:center;
@@ -254,7 +253,6 @@ h1,h2,h3,h4{
 .mobile-nav-foot{margin-top:32px;display:flex;flex-direction:column;gap:12px;font-size:.9375rem;color:var(--muted)}
 .mobile-nav-foot a:hover{color:var(--yellow-dk)}
 
-/* Social icons in mobile nav */
 .mobile-socials{
   display:flex;gap:12px;margin-top:24px;padding-top:24px;
   border-top:1px solid var(--line);
@@ -765,10 +763,15 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
   max-width:90%;
 }
 
+/* ============================================================
+   LEADERSHIP — 2 LEADERS
+   ============================================================ */
 .leader-grid{
   display:grid;
-  grid-template-columns:minmax(0,440px);
-  justify-content:center;gap:24px;margin-top:56px;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 340px));
+  justify-content:center;
+  gap:24px;
+  margin-top:56px;
   perspective:1000px;
 }
 .leader{
@@ -807,7 +810,7 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
 }
 
 /* ============================================================
-   CONTACT — with Instagram, WhatsApp, Google Map
+   CONTACT
    ============================================================ */
 .contact{background:var(--cream-2)}
 .contact-grid{
@@ -841,7 +844,6 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
 .contact-item p{color:var(--ink);font-size:1rem;font-weight:700}
 .contact-item p a:hover{color:var(--yellow-dk)}
 
-/* Instagram contact item special styling */
 .contact-item.ig-item .ico{
   background:linear-gradient(135deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
   color:#fff;
@@ -852,7 +854,6 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
 
-/* Google Map wrapper */
 .map-wrap{
   margin-top:32px;
   border-radius:24px;
@@ -932,9 +933,6 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
 .cta-inner h2 .accent{color:var(--yellow);font-style:italic}
 .cta-inner p{color:rgba(255,255,255,.65);font-size:1rem}
 
-/* ============================================================
-   FOOTER — with social icons
-   ============================================================ */
 .site-footer{background:var(--dark);color:rgba(255,255,255,.7);padding:64px 0 0;border-top:1px solid rgba(255,255,255,.08)}
 .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:48px;padding-bottom:52px}
 .footer-brand .brand-logo{
@@ -944,7 +942,6 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
 }
 .footer-brand p{font-size:.9rem;line-height:1.7;max-width:300px;color:rgba(255,255,255,.55)}
 
-/* Social icons in footer */
 .footer-socials{
   display:flex;gap:12px;margin-top:24px;
 }
@@ -1463,11 +1460,14 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
   </div>
 </section>
 
+<!-- ============================================================
+     LEADERSHIP — 2 LEADERS
+     ============================================================ -->
 <section class="section" id="leaders" style="background:var(--cream-2)">
   <div class="container">
     <div class="section-head center" data-reveal>
       <span class="eyebrow" style="justify-content:center">Leadership</span>
-      <h2 class="section-title">The Leader Behind Orbit</h2>
+      <h2 class="section-title">The Leaders Behind Orbit</h2>
       <p class="section-sub">
         Dedicated to operational excellence and safety — ensuring every journey is delivered
         with the highest standards of professionalism and reliability.
@@ -1478,12 +1478,16 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
         <h3>Mohammed Younus</h3>
         <p>CEO &amp; Managing Director</p>
       </article>
+      <article class="leader card-3d" data-reveal style="--d:.1s">
+        <h3>Raziq</h3>
+        <p>Operations Director</p>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     CONTACT — with Instagram, WhatsApp, and Google Map
+     CONTACT
      ============================================================ -->
 <section class="contact section" id="contact">
   <div class="container contact-grid">
@@ -1505,7 +1509,6 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
         <div><span>Email</span><p><a href="mailto:orbittransportqa@gmail.com">orbittransportqa@gmail.com</a></p></div>
       </div>
 
-      <!-- Instagram -->
       <div class="contact-item ig-item">
         <div class="ico">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1524,7 +1527,6 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
         <div><span>Location</span><p>Doha, Qatar — P.O. Box 13548</p></div>
       </div>
 
-      <!-- Google Map -->
       <div class="map-wrap">
         <div class="map-pin">Doha, Qatar</div>
         <iframe
@@ -1577,9 +1579,6 @@ body.loaded .hero-fade.d3{animation-delay:.45s}
 
 </main>
 
-<!-- ============================================================
-     FOOTER — with social icons
-     ============================================================ -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
